@@ -1,0 +1,17 @@
+{
+  "name": "sj22b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mariadb": "^3.0.2",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.8"
+  }
+}
