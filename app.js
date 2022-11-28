@@ -25,7 +25,7 @@ app.get("/categories", async (req,res) => {
 
 app.get("/tasks", async (req,res) => {
     try{
-        const taskovi = await Task.findAll();
+        const taskovi = await Task.findAll({ include: Category });
         return res.json(taskovi);
     } catch(err){
         console.log(err);
@@ -38,6 +38,7 @@ app.get("/tasks/:q", async (req,res) => {
         //select * from tasks where naziv like '%:q%'
         const { Op } = require("sequelize");
         const taskovi = await Task.findAll({
+            include: Category,
             where:{
                 naziv: {
                     [Op.substring]: req.params.q
